@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>Subjects - Grade Master Solution</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect" />
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" />
+
+  <!-- icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- DataTables -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap5.min.css" />
+
+  <!-- DataTables -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap5.min.js"></script>
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet" />
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet" />
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet" />
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet" />
+
+  <style>
+    .table th:nth-child(5),
+    .table td:nth-child(5) {
+      width: 15%;
+      /* Adjust the percentage as needed */
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="users-profile.html" class="logo d-flex align-items-center">
+        <span class="d-none d-lg-block">Grade Master Solution</span>
+      </a>
+      <i class="bi bi-list toggle-sidebar-btn"></i>
+    </div>
+    <!-- End Logo -->
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+        <li class="nav-item dropdown pe-3">
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="Profile"
+              class="rounded-circle" />
+            <span class="d-none d-md-block dropdown-toggle ps-2" id="username"></span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6 id="username1">User Name</h6>
+              <span id="role1">User Role</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#" id="logout">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+          </ul>
+          <!-- End Profile Dropdown Items -->
+        </li>
+        <!-- End Profile Nav -->
+      </ul>
+    </nav>
+    <!-- End Icons Navigation -->
+  </header>
+  <!-- End Header -->
+
+  <aside id="sidebar" class="sidebar">
+    <ul class="sidebar-nav" id="sidebar-nav">
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="user.html">
+          <i class="bi bi-person-circle"></i>
+          <span>Users</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="course.html">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>Courses</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="semester.html">
+          <i class="bi bi-calendar3"></i>
+          <span>Semesters</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="subject.html">
+          <i class="bi bi-book"></i>
+          <span>Subjects</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="students.html">
+          <i class="bi bi-people"></i>
+          <span>Students</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="marks.html">
+          <i class="fa-solid fa-check"></i>
+          <span>Marks</span>
+        </a>
+      </li>
+      <span id="showTranscript"></span>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="users-profile.html">
+          <i class="bi bi-person"></i>
+          <span>Profile</span>
+        </a>
+      </li>
+      <!-- End Profile Page Nav -->
+    </ul>
+  </aside>
+  <!-- End Sidebar-->
+
+  <main id="main" class="main">
+    <!-- Loader -->
+    <div id="loader">
+      <div class="d-flex justify-content-center align-items-center" style="height: 77vh;">
+        <div class="spinner-border" style="width: 40px; height: 40px;" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="contentSection" style="display: none;">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <div class="card-title d-flex justify-content-between align-items-center">
+                <h3>
+                  <strong>Subjects</strong>
+                </h3>
+                <div>
+                  <!-- Basic Modal -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#basicModal">
+                    <i class="bi bi-plus me-1"></i>
+                    Add Subject
+                  </button>
+                  <div class="modal fade" id="basicModal" tabindex="-1">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" style="font-weight:bold;">Add Subject</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <!-- course -->
+                          <div class="row mb-3">
+                            <label class="col-sm-3 col-form-label">Course</label>
+                            <div class="col-sm-9">
+                              <select class="form-select" id="course" onfocus="dropdownOptions('semester')"
+                                onchange="dropdownOptions('semester')">
+                              </select>
+                              <span id="errormsgcourse" class="text-danger" style="display:none;">Please select
+                                course</span>
+                            </div>
+                          </div>
+                          <!-- Semester -->
+                          <div class="row mb-3">
+                            <label class="col-sm-3 col-form-label">Semester</label>
+                            <div class="col-sm-9">
+                              <select class="form-select" id="semester">
+                              </select>
+                              <span id="errormsgsem" class="text-danger" style="display:none;">Please select
+                                semester</span>
+                            </div>
+                          </div>
+                          <!-- subject -->
+                          <div class="row mb-3">
+                            <label for="inputText" class="col-sm-3 col-form-label">Name</label>
+                            <div class="col-sm-9">
+                              <input type="text" class="form-control" id="subject" />
+                              <span id="errormsgsubject" class="text-danger" style="display:none;">Please enter subject
+                                name</span>
+                            </div>
+                          </div>
+                          <!-- marks -->
+                          <div class="row mb-3">
+                            <label for="inputText" class="col-sm-3 col-form-label">Total Marks</label>
+                            <div class="col-sm-9">
+                              <input type="number" class="form-control" id="marks" value="100" disabled />
+                              <span id="errormsgmarks" class="text-danger" style="display:none;">Please enter valid
+                                marks between 0 and 100</span>
+                            </div>
+                          </div>
+                          <!-- Credit Hour -->
+                          <div class="row mb-3">
+                            <label for="inputText" class="col-sm-3 col-form-label">Credit Hour</label>
+                            <div class="col-sm-9">
+                              <input type="number" class="form-control" id="credit" />
+                              <span id="errormsgcredit" class="text-danger" style="display:none;">Please enter valid
+                                credit hour between 0 and 3</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                            Close
+                          </button>
+                          <button type="button" class="btn btn-primary" onclick="validateAndAddSub()">
+                            Add Subject
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End Basic Modal-->
+                </div>
+              </div>
+
+              <!-- Table with stripped rows -->
+              <table class="table" id="subTable">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Total Marks</th>
+                    <th>Credit Hour</th>
+                    <th>Course</th>
+                    <th>Semester</th>
+                    <th class="text-end">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="tBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="credits">
+      Designed by <a href="#">Grade Master Solution</a>
+    </div>
+  </footer>
+  <!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script type="module" src="assets/js/subject.js"></script>
+  <script type="module" src="assets/js/common.js"></script>
+
+</body>
+
+</html>

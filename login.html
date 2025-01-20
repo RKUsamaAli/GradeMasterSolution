@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Login - Grade Master Solution</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- CryptoJS for password hashing -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+  <!-- Custom JS Module -->
+</head>
+
+<body>
+
+  <main>
+    <div class="container">
+      <section class="section register min-vh-100 d-flex align-items-center justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-8">
+          <div class="card shadow-sm p-3">
+            <div class="text-center mb-3">
+              <a href="index.html" class="logo">
+                <span class="fs-4 fw-bold">Grade Master Solution</span>
+              </a>
+            </div>
+            <h5 class="card-title text-center mb-4">Login to Your Account</h5>
+            <form id="submitForm" novalidate>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" class="form-control" required>
+                <div class="invalid-feedback" id="emailError"></div>
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-control" required>
+                <div class="invalid-feedback" id="passwordError"></div>
+              </div>
+              <div class="text-danger mb-3" id="nouserError"></div>
+              <button type="submit" class="btn btn-primary w-100">Login</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Bootstrap JS -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="assets/js/login.js"></script>
+</body>
+
+</html>
