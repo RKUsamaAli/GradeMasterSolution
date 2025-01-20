@@ -65,7 +65,9 @@ async function showTable() {
         queryByKeyValue(COLLECTIONS.marks, "studentId", studentId),
       ])
 
-      const semesters = semestersData.status === "fulfilled" ? semestersData.value : [];
+      const semesters = semestersData.status === "fulfilled" ? semestersData.value.sort((a, b) => a.name.localeCompare(b.name)) : [];
+      console.log(semestersData);
+
       const subjects = subjectsData.status === "fulfilled" ? subjectsData.value : [];
       const marks = marksData.status === "fulfilled" ? marksData.value : [];
 
@@ -150,6 +152,7 @@ async function getSemestersGPAHtml(student, semesters, subjects, marks) {
 async function getMarksHtml(marks, subjects) {
   const html = await Promise.all(marks.map(async (mark) => {
     const subject = subjects.find(x => x.id == mark.subjectId);
+    if(!subject) return "";
     return `
       <tr>
         <td>${subject.name}</td>
