@@ -211,6 +211,11 @@ function validateAndAdd() {
 
   if (name === "") {
     errormsgname.style.display = "block";
+    errormsgname.textContent = "Name is required!";
+    flag = false;
+  } else if (!/^[a-zA-Z\s]+$/.test(name)) {
+    errormsgname.style.display = "block";
+    errormsgname.textContent = "Name should contain only characters!";
     flag = false;
   } else {
     errormsgname.style.display = "none";
@@ -218,6 +223,11 @@ function validateAndAdd() {
 
   if (email === "") {
     errormsgemail.style.display = "block";
+    errormsgemail.textContent = "Email is required!";
+    flag = false;
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errormsgemail.style.display = "block";
+    errormsgemail.textContent = "Invalid email format!";
     flag = false;
   } else {
     errormsgemail.style.display = "none";

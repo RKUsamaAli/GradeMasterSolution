@@ -180,6 +180,16 @@ function validateAndAddSub() {
 
   // Validate Subject
   if (subject === "") {
+    errormsgsubject.innerHTML = "Subject name is required.";
+    errormsgsubject.style.display = "block";
+    flag = false;
+  } else {
+    errormsgsubject.style.display = "none";
+  }
+
+  // Validate Subject Name
+  if (!/^[a-zA-Z\s]+$/.test(subject)) {
+    errormsgsubject.innerHTML = "Subject name should contain only characters and spaces.";
     errormsgsubject.style.display = "block";
     flag = false;
   } else {

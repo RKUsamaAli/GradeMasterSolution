@@ -157,6 +157,7 @@ function renderCourseActions(row, rowIndex) {
 // Validate and add a new course
 function validateAndAdd(uId = '') {
   let courseName;
+
   if (uId) {
     courseName = document.getElementById( uId + "updateCourseName").value.trim().toUpperCase();
   } else {
@@ -175,6 +176,12 @@ function validateAndAdd(uId = '') {
 
 // Add a new course to the database
 async function addCourse(name, id = '') {
+
+  if (!/^[a-zA-Z\s]+$/.test(name)) {
+    alert("Course name must be a string containing only letters and spaces!");
+    return;
+  }
+
   if (courses.some(course => course.name === name)) {
     alert("This course already exists!");
     return;
@@ -217,6 +224,10 @@ async function updateCourse(rowIndex) {
   const newName = document.getElementById(`updateCoursename${rowIndex}`).value.trim().toUpperCase();
   const currentName = courses[rowIndex]?.name;
 
+  if (!/^[a-zA-Z\s]+$/.test(newName)) {
+    alert("Course name must be a string containing only letters and spaces!");
+    return;
+  }
   if (!newName || newName === currentName) {
     alert("Course name cannot be empty or the same as the current name!");
     return;

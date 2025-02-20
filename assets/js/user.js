@@ -154,6 +154,11 @@ function validateAndAdd() {
   // Validate Name
   if (name === "") {
     errormsgname.style.display = "block";
+    errormsgname.textContent = "Name cannot be empty";
+    flag = false;
+  } else if (!/^[a-zA-Z\s]+$/.test(name)) {
+    errormsgname.style.display = "block";
+    errormsgname.textContent = "Name must contain only letters and spaces";
     flag = false;
   } else {
     errormsgname.style.display = "none";
@@ -162,6 +167,11 @@ function validateAndAdd() {
   // Validate Email
   if (email === "") {
     errormsgemail.style.display = "block";
+    errormsgemail.textContent = "Email cannot be empty";
+    flag = false;
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    errormsgemail.style.display = "block";
+    errormsgemail.textContent = "Invalid email format";
     flag = false;
   } else {
     errormsgemail.style.display = "none";
